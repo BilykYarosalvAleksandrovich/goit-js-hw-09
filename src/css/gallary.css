@@ -1,0 +1,54 @@
+body {
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap; /* щоб картинки переносились */
+  gap: 15px; /* відстань між картками */
+  justify-content: center; /* центрування */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.gallery-item {
+  flex: 0 1 calc(33.333% - 15px); /* 3 в ряд */
+  box-sizing: border-box;
+}
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Робимо адаптив: на планшетах по 2, на мобілках по 1 */
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 0 1 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 0 1 100%;
+  }
+}
